@@ -23,26 +23,31 @@ paises.append({
     "superficie": 2780400,
     "continente": "América"
 })
+```
+
 Las listas permiten recorrer, filtrar y ordenar los países según distintos criterios, por ejemplo:
 
-
+```python
 for p in paises:
     print(p["nombre"])
+```    
 Diccionarios
 Un diccionario es una estructura que almacena información en pares clave: valor.
 En este programa, cada país se representa como un diccionario:
 
-
+```python
 pais = {
     "nombre": "Francia",
     "poblacion": 65273511,
     "superficie": 551695,
     "continente": "Europa"
 }
+```    
 Los diccionarios facilitan el acceso a los datos mediante las claves:
 
-
+```python
 print(pais["nombre"])  # Muestra "Francia"
+```   
 Esto hace que la información de cada país sea clara, ordenada y fácil de manipular.
 
 Funciones
@@ -60,13 +65,14 @@ mostrar_estadisticas() → calcula y muestra datos promedio.
 
 Ejemplo:
 
-
+```python
 def buscar_pais(paises, nombre):
     encontrados = []
     for pais in paises:
         if nombre.lower() in pais["nombre"].lower():
             encontrados.append(pais)
     return encontrados
+```   
 Cada función recibe parámetros, ejecuta un proceso y devuelve un resultado.
 
 Condicionales
@@ -74,7 +80,7 @@ Las estructuras condicionales (if, elif, else) permiten ejecutar diferentes bloq
 
 En el programa se usan para controlar la lógica del menú y validar datos:
 
-
+```python
 if opcion == 1:
     nombre = input("Ingrese nombre: ")
     resultado = buscar_pais(paises, nombre)
@@ -82,14 +88,16 @@ elif opcion == 7:
     print("Cerrando programa")
 else:
     print("Opción no válida")
+```   
 También se utilizan para manejar errores y validar valores numéricos.
 
 Ordenamientos
 El programa puede ordenar países por distintos criterios (nombre, población o superficie) utilizando la función sorted() con una clave de ordenamiento:
 
-
+```python
 def ordenar_paises(paises, clave, descendente=False):
     return sorted(paises, key=lambda x: x[clave], reverse=descendente)
+```  
 El parámetro reverse=True permite invertir el orden para hacerlo descendente.
 Esto es útil para mostrar, por ejemplo, los países con mayor población primero.
 
@@ -98,13 +106,16 @@ Se calculan varias medidas estadísticas sobre los datos cargados:
 
 Máximo y mínimo (país con mayor y menor población):
 
-
+```python
 mayor_pob = max(paises, key=lambda x: x["poblacion"])
 menor_pob = min(paises, key=lambda x: x["poblacion"])
+```  
 Promedio de población y superficie:
 
-
+```python
 prom_pob = sum(p["poblacion"] for p in paises) / len(paises)
+```  
+
 Conteo por continente:
 Se utiliza un diccionario para contar cuántos países hay por continente.
 
@@ -123,13 +134,14 @@ Brasil,212559417,8515767,América
 Francia,65273511,551695,Europa
 En Python se leen utilizando el módulo estándar csv:
 
-
+```python
 import csv
 
 with open("paises.csv", newline='', encoding='utf-8') as archivo:
     lector = csv.DictReader(archivo)
     for fila in lector:
         print(fila["nombre"], fila["poblacion"])
+```  
 De esta forma, cada fila del archivo se convierte automáticamente en un diccionario, lo que simplifica mucho el manejo de los datos.
 
  Flujo de Operaciones Principales
