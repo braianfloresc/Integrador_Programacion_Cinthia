@@ -1,0 +1,155 @@
+# 🧠 Marco Teórico – Programa de Gestión de Países
+
+## 📘 Introducción
+
+El programa desarrollado permite gestionar información de distintos países a partir de un archivo CSV que contiene sus datos principales: **nombre**, **población**, **superficie** y **continente**.  
+Para lograr esto, se aplican varios conceptos fundamentales de la programación en Python, entre ellos: **listas**, **diccionarios**, **funciones**, **condicionales**, **ordenamientos**, **estadísticas básicas** y **manejo de archivos CSV**.  
+A continuación se describen en detalle los conceptos utilizados y cómo se aplican dentro del programa.
+
+---
+
+## 🧩 Listas
+
+Una **lista** es una estructura de datos que permite almacenar múltiples elementos en una sola variable.  
+Los elementos de una lista pueden ser de distintos tipos (números, cadenas, diccionarios, etc.) y son **modificables**.
+
+En el programa, se utiliza una lista llamada `paises` que contiene varios diccionarios, cada uno representando un país:
+
+```python
+paises = []
+paises.append({
+    "nombre": "Argentina",
+    "poblacion": 45376763,
+    "superficie": 2780400,
+    "continente": "América"
+})
+Las listas permiten recorrer, filtrar y ordenar los países según distintos criterios, por ejemplo:
+
+python
+Copiar código
+for p in paises:
+    print(p["nombre"])
+Diccionarios
+Un diccionario es una estructura que almacena información en pares clave: valor.
+En este programa, cada país se representa como un diccionario:
+
+python
+Copiar código
+pais = {
+    "nombre": "Francia",
+    "poblacion": 65273511,
+    "superficie": 551695,
+    "continente": "Europa"
+}
+Los diccionarios facilitan el acceso a los datos mediante las claves:
+
+python
+Copiar código
+print(pais["nombre"])  # Muestra "Francia"
+Esto hace que la información de cada país sea clara, ordenada y fácil de manipular.
+
+Funciones
+Las funciones permiten agrupar un conjunto de instrucciones que cumplen una tarea específica, lo que mejora la organización y reutilización del código.
+
+Ejemplos del programa:
+
+leer_csv() → carga los datos desde el archivo CSV.
+
+buscar_pais() → busca países por nombre.
+
+filtrar_por_continente() → filtra países por continente.
+
+mostrar_estadisticas() → calcula y muestra datos promedio.
+
+Ejemplo:
+
+python
+Copiar código
+def buscar_pais(paises, nombre):
+    encontrados = []
+    for pais in paises:
+        if nombre.lower() in pais["nombre"].lower():
+            encontrados.append(pais)
+    return encontrados
+Cada función recibe parámetros, ejecuta un proceso y devuelve un resultado.
+
+Condicionales
+Las estructuras condicionales (if, elif, else) permiten ejecutar diferentes bloques de código según una condición lógica.
+
+En el programa se usan para controlar la lógica del menú y validar datos:
+
+python
+Copiar código
+if opcion == 1:
+    nombre = input("Ingrese nombre: ")
+    resultado = buscar_pais(paises, nombre)
+elif opcion == 7:
+    print("Cerrando programa")
+else:
+    print("Opción no válida")
+También se utilizan para manejar errores y validar valores numéricos.
+
+Ordenamientos
+El programa puede ordenar países por distintos criterios (nombre, población o superficie) utilizando la función sorted() con una clave de ordenamiento:
+
+python
+Copiar código
+def ordenar_paises(paises, clave, descendente=False):
+    return sorted(paises, key=lambda x: x[clave], reverse=descendente)
+El parámetro reverse=True permite invertir el orden para hacerlo descendente.
+Esto es útil para mostrar, por ejemplo, los países con mayor población primero.
+
+Estadísticas básicas
+Se calculan varias medidas estadísticas sobre los datos cargados:
+
+Máximo y mínimo (país con mayor y menor población):
+
+python
+Copiar código
+mayor_pob = max(paises, key=lambda x: x["poblacion"])
+menor_pob = min(paises, key=lambda x: x["poblacion"])
+Promedio de población y superficie:
+
+python
+Copiar código
+prom_pob = sum(p["poblacion"] for p in paises) / len(paises)
+Conteo por continente:
+Se utiliza un diccionario para contar cuántos países hay por continente.
+
+Estas estadísticas permiten analizar los datos de manera más informativa.
+
+ Archivos CSV
+Los archivos CSV (Comma Separated Values) son archivos de texto que almacenan datos en formato tabular, separados por comas.
+
+Ejemplo:
+
+csv
+Copiar código
+nombre,poblacion,superficie,continente
+Argentina,45376763,2780400,América
+Brasil,212559417,8515767,América
+Francia,65273511,551695,Europa
+En Python se leen utilizando el módulo estándar csv:
+
+python
+Copiar código
+import csv
+
+with open("paises.csv", newline='', encoding='utf-8') as archivo:
+    lector = csv.DictReader(archivo)
+    for fila in lector:
+        print(fila["nombre"], fila["poblacion"])
+De esta forma, cada fila del archivo se convierte automáticamente en un diccionario, lo que simplifica mucho el manejo de los datos.
+
+ Flujo de Operaciones Principales
+A continuación se muestra un esquema del funcionamiento general del programa:
+
+
+![alt text](image.png)
+
+
+ Conclusión
+
+Este proyecto integra varios conceptos fundamentales de la programación estructurada en Python.
+Gracias a la combinación de funciones, listas, diccionarios, condicionales y manejo de archivos, se logra un programa modular, reutilizable y fácil de mantener.
+El manejo de estadísticas básicas y ordenamientos añade una capa de análisis de datos que enriquece la aplicación y la hace más útil para el usuario.
