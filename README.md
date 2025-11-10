@@ -1,4 +1,4 @@
-# 🌎 Programa de Gestión de Países
+#  Programa de Gestión de Países
 
 ## 🧾 Descripción del programa
 
@@ -55,54 +55,35 @@ Mostrar estadísticas
 
 Salir
 
-yaml
-Copiar código
-
-Escribe el número correspondiente para elegir una acción.
 
 ---
 
-## 🧮 Ejemplos de uso
+##  Ejemplos de uso
 
-### 📘 Ejemplo 1 – Buscar país
+### Ejemplo 1 – Buscar país
 **Entrada:**
 1
 Ingrese nombre o parte del nombre: arg
 
-makefile
-Copiar código
-
 **Salida:**
 Argentina - 45376763 hab. - 2780400 km² - América
 
-yaml
-Copiar código
-
 ---
 
-### 🌍 Ejemplo 2 – Filtrar por continente
+###  Ejemplo 2 – Filtrar por continente
 **Entrada:**
 2
 Ingrese continente: Europa
-
-makefile
-Copiar código
 
 **Salida:**
 Francia - 65273511 hab. - 551695 km² - Europa
 Alemania - 83783942 hab. - 357022 km² - Europa
 
-yaml
-Copiar código
-
 ---
 
-### 📊 Ejemplo 3 – Mostrar estadísticas
+###  Ejemplo 3 – Mostrar estadísticas
 **Entrada:**
 6
-
-makefile
-Copiar código
 
 **Salida:**
 --- ESTADÍSTICAS ---
@@ -118,21 +99,18 @@ Asia: 10
 África: 9
 Oceanía: 5
 
-yaml
-Copiar código
-
 ---
 
 ## 👥 Participación de los integrantes
 
 | Integrante | Rol / Aporte principal |
 |-------------|------------------------|
-| **Santino [Apellido]** | Desarrollo de funciones de lectura y filtrado, manejo de errores. |
+| **Santino Naldini** | Desarrollo de funciones de lectura y filtrado, manejo de errores. |
 | **Braian Flores** | Diseño del menú, ordenamiento y estadísticas, documentación y pruebas. |
 
 ---
 
-## 💡 Notas adicionales
+##  Notas adicionales
 
 - Asegúrate de que el archivo CSV esté codificado en **UTF-8** para evitar errores con tildes o caracteres especiales.  
 - Puedes modificar la ruta del archivo CSV según tu ubicación local.  
@@ -141,7 +119,5 @@ Copiar código
   - Campos vacíos o no numéricos.
   - Entradas incorrectas del usuario.
 
----
 
-📁 **Autoría:** Proyecto académico de Programación I  
-📅 **Año:** 2025  
+
