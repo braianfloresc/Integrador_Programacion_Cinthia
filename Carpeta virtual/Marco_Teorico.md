@@ -148,7 +148,7 @@ De esta forma, cada fila del archivo se convierte automáticamente en un diccion
 A continuación se muestra un esquema del funcionamiento general del programa:
 
 
-[alt text](image.png)
+[FLUJO DEL PROGRAMA (HACER CLICK)](image.png)
 
 
  Conclusión
