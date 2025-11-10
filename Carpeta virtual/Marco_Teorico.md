@@ -25,16 +25,14 @@ paises.append({
 })
 Las listas permiten recorrer, filtrar y ordenar los países según distintos criterios, por ejemplo:
 
-python
-Copiar código
+
 for p in paises:
     print(p["nombre"])
 Diccionarios
 Un diccionario es una estructura que almacena información en pares clave: valor.
 En este programa, cada país se representa como un diccionario:
 
-python
-Copiar código
+
 pais = {
     "nombre": "Francia",
     "poblacion": 65273511,
@@ -43,8 +41,7 @@ pais = {
 }
 Los diccionarios facilitan el acceso a los datos mediante las claves:
 
-python
-Copiar código
+
 print(pais["nombre"])  # Muestra "Francia"
 Esto hace que la información de cada país sea clara, ordenada y fácil de manipular.
 
@@ -63,8 +60,7 @@ mostrar_estadisticas() → calcula y muestra datos promedio.
 
 Ejemplo:
 
-python
-Copiar código
+
 def buscar_pais(paises, nombre):
     encontrados = []
     for pais in paises:
@@ -78,8 +74,7 @@ Las estructuras condicionales (if, elif, else) permiten ejecutar diferentes bloq
 
 En el programa se usan para controlar la lógica del menú y validar datos:
 
-python
-Copiar código
+
 if opcion == 1:
     nombre = input("Ingrese nombre: ")
     resultado = buscar_pais(paises, nombre)
@@ -92,8 +87,7 @@ También se utilizan para manejar errores y validar valores numéricos.
 Ordenamientos
 El programa puede ordenar países por distintos criterios (nombre, población o superficie) utilizando la función sorted() con una clave de ordenamiento:
 
-python
-Copiar código
+
 def ordenar_paises(paises, clave, descendente=False):
     return sorted(paises, key=lambda x: x[clave], reverse=descendente)
 El parámetro reverse=True permite invertir el orden para hacerlo descendente.
@@ -104,14 +98,12 @@ Se calculan varias medidas estadísticas sobre los datos cargados:
 
 Máximo y mínimo (país con mayor y menor población):
 
-python
-Copiar código
+
 mayor_pob = max(paises, key=lambda x: x["poblacion"])
 menor_pob = min(paises, key=lambda x: x["poblacion"])
 Promedio de población y superficie:
 
-python
-Copiar código
+
 prom_pob = sum(p["poblacion"] for p in paises) / len(paises)
 Conteo por continente:
 Se utiliza un diccionario para contar cuántos países hay por continente.
@@ -131,8 +123,7 @@ Brasil,212559417,8515767,América
 Francia,65273511,551695,Europa
 En Python se leen utilizando el módulo estándar csv:
 
-python
-Copiar código
+
 import csv
 
 with open("paises.csv", newline='', encoding='utf-8') as archivo:
