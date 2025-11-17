@@ -1,4 +1,4 @@
-from crud_paises import (
+from procesamiento import (
     buscar_pais,
     filtrar_por_continente,
     filtrar_por_poblacion,
